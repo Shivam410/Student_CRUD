@@ -90,12 +90,13 @@ Visit **http://127.0.0.1:8000** in your browser.
 ## 🖥️ CRUD Endpoints
 | Method | Route               | Action           | Description        |  
 |--------|---------------------|------------------|--------------------|  
-| GET    | /students           | index()          | List all students  |  
-| GET    | /students/create    | create()         | Show form to add   |  
-| POST   | /students           | addStudent()          | Save new student   |  
-| GET    | /students/{id}/edit | editStudent()           | Edit student data  |  
-| PUT    | /students/{id}      | updateStudent()         | Update student     |  
-| DELETE | /students/{id}      | deleteStudent()        | Delete student     |  
+| GET    | /           | index()          | List all students  |  
+| GET    | /AddView    | create()         | Show form to add   |  
+| POST   | /AddStudent           | addStudent()          | Save new student   |  
+| GET    | /Edit/{id} | editStudent()           | Edit student data  |  
+| GET    | /viewStudent/{id}           | viewStudent          | View Single student  |
+| PUT    | /Update/{id}      | updateStudent()         | Update student     |  
+| DELETE | /Delete/{id}      | deleteStudent()        | Delete student     |  
 
 ## 📜 License
 This project is open-source and free to use.
