@@ -1,66 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student CRUD Project - Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📌 Introduction
+This project is a **Student Management System** built using Laravel, allowing CRUD (Create, Read, Update, Delete) operations for student records. It provides an intuitive admin panel to manage students efficiently.
 
-## About Laravel
+## 🛠️ Features
+- Add new students with details (Name, Email, Phone, Address, etc.)  
+- View a list of all students  
+- Update student details  
+- Delete student records  
+- Laravel validation for input fields  
+- Bootstrap-styled UI for a responsive design  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Installation & Setup
+Follow these steps to set up the project on your local system:  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Shivam410/Student_CRUD.git
+cd student-crud-laravel
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2️⃣ Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Learning Laravel
+### 3️⃣ Configure Environment
+- Copy `.env.example` to `.env`
+```bash
+cp .env.example .env
+```
+- Update database details in the `.env` file
+```env
+DB_CONNECTION=mysql  
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=your_database_name  
+DB_USERNAME=root  
+DB_PASSWORD=
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 4️⃣ Generate Application Key
+```bash
+php artisan key:generate
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 5️⃣ Run Migrations
+```bash
+php artisan migrate
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 6️⃣ Serve the Application
+```bash
+php artisan serve
+```
+Visit **http://127.0.0.1:8000** in your browser.  
 
-## Laravel Sponsors
+### Opration to perfrom
+```bash
+-By clicking on the Roll Number it will Give the Roll NUmber in the asending way
+-And By clicking on the the Name It will Gives the name as a alphabatical order 
+-In the the search box we can Search the Student name
+-By clicking on the Edit Button it will redirect to the Update Page
+-By clicking on the Delete Button it will Delete the Student
+-By clicking on the Add Button it will redirect to the Add Student Page
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📁 Project Structure
+```
+/app  
+  /Http  
+    /Controllers  
+      StudentController.php  
+  /Models  
+    Student.php  
+/database  
+  /migrations  
+/resources  
+  /views  
+      StudentTable.blade.php  
+      AddStudent.blade.php  
+      UpdateStudent.blade.php  
+      ViewStudent.blade.php  
+/routes  
+  web.php  
+```
 
-### Premium Partners
+## 🖥️ CRUD Endpoints
+| Method | Route               | Action           | Description        |  
+|--------|---------------------|------------------|--------------------|  
+| GET    | /students           | index()          | List all students  |  
+| GET    | /students/create    | create()         | Show form to add   |  
+| POST   | /students           | addStudent()          | Save new student   |  
+| GET    | /students/{id}/edit | editStudent()           | Edit student data  |  
+| PUT    | /students/{id}      | updateStudent()         | Update student     |  
+| DELETE | /students/{id}      | deleteStudent()        | Delete student     |  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📜 License
+This project is open-source and free to use.
