@@ -13,11 +13,27 @@
 </head>
 
 <body>
+    <div class="p-3">
+        @if(session('success'))
+            <div class="alert alert-success" id="successMessage">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $("#successMessage").fadeOut('slow');
+            }, 3000);
+        });
+    </script>
 
     <div class="container mt-5">
         <h2 class="text-center mb-4">Student List</h2>
         <div class="d-flex justify-content-end p-3">
-            <a class="btn btn-outline-primary btn-lg px-4 py-2" href="{{ route('Add.View') }}">Add About</a>
+            <a class="btn btn-outline-primary btn-lg px-4 py-2" href="{{ route('Add.View') }}">Add Student</a>
         </div>
         <form method="GET" action="{{ route('Student.Index') }}" class="mb-3">
             <div class="row">
@@ -38,8 +54,7 @@
             <thead class="table-dark">
                 <tr>
                     <th><a
-                            href="{{ route('Student.Index', ['sort_field' => 'roll_no', 'sort_order' => request('sort_order') == 'asc' ? 'desc' : 'asc']) }}">Roll
-                            No</a></th>
+                            href="{{ route('Student.Index', ['sort_field' => 'roll_no', 'sort_order' => request('sort_order') == 'asc' ? 'desc' : 'asc']) }}">Roll No</a></th>
                     <th><a
                             href="{{ route('Student.Index', ['sort_field' => 'name', 'sort_order' => request('sort_order') == 'asc' ? 'desc' : 'asc']) }}">Name</a>
                     </th>
